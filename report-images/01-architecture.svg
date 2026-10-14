@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Kiến trúc hệ thống quản lý sự kiện/Even</title>
+  <desc id="desc">Sơ đồ các dịch vụ Docker Compose, mạng frontend, backend, monitoring và luồng log.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#475569"/>
+    </marker>
+    <style>
+      .box { fill: #fff; stroke: #2563eb; stroke-width: 2; rx: 12; }
+      .monitor { stroke: #7c3aed; }
+      .data { stroke: #059669; }
+      .label { font: 18px sans-serif; fill: #0f172a; text-anchor: middle; }
+      .small { font: 14px sans-serif; fill: #334155; text-anchor: middle; }
+      .net { fill: #eff6ff; stroke: #93c5fd; stroke-width: 1.5; stroke-dasharray: 8 5; rx: 18; }
+      .arrow { stroke: #475569; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1200" height="720" fill="#f8fafc"/>
+  <text x="600" y="44" class="label" style="font-size:26px;font-weight:700">Hệ thống quản lý sự kiện/Even — Docker Compose</text>
+
+  <rect x="36" y="91" width="220" height="154" class="net"/>
+  <text x="146" y="119" class="small" style="font-weight:700">Mạng frontend</text>
+  <rect x="57" y="143" width="178" height="70" class="box"/>
+  <text x="146" y="173" class="label">Trình duyệt</text>
+  <text x="146" y="197" class="small">HTTP :8080</text>
+
+  <rect x="292" y="91" width="348" height="264" class="net"/>
+  <text x="466" y="119" class="small" style="font-weight:700">Mạng frontend + backend</text>
+  <rect x="327" y="148" width="128" height="72" class="box"/>
+  <text x="391" y="179" class="label">Nginx</text>
+  <text x="391" y="202" class="small">Reverse proxy</text>
+  <rect x="477" y="148" width="128" height="72" class="box"/>
+  <text x="541" y="179" class="label">Node.js</text>
+  <text x="541" y="202" class="small">Express :3000</text>
+  <rect x="415" y="259" width="166" height="65" class="box data"/>
+  <text x="498" y="287" class="label">PostgreSQL</text>
+  <text x="498" y="309" class="small">backend, không publish</text>
+  <rect x="327" y="259" width="72" height="65" class="box"/>
+  <text x="363" y="288" class="small">pgAdmin</text>
+  <text x="363" y="309" class="small">loopback</text>
+
+  <rect x="678" y="91" width="486" height="398" class="net"/>
+  <text x="921" y="119" class="small" style="font-weight:700">Mạng monitoring</text>
+  <rect x="707" y="150" width="137" height="70" class="box monitor"/>
+  <text x="775" y="180" class="label">Prometheus</text>
+  <text x="775" y="202" class="small">scrape metrics</text>
+  <rect x="895" y="150" width="137" height="70" class="box monitor"/>
+  <text x="963" y="180" class="label">Grafana</text>
+  <text x="963" y="202" class="small">dashboard / Explore</text>
+  <rect x="707" y="270" width="137" height="70" class="box monitor"/>
+  <text x="775" y="300" class="label">Exporters</text>
+  <text x="775" y="322" class="small">Postgres / cAdvisor</text>
+  <rect x="895" y="270" width="137" height="70" class="box monitor"/>
+  <text x="963" y="300" class="label">Promtail</text>
+  <text x="963" y="322" class="small">đọc Docker logs</text>
+  <rect x="895" y="390" width="137" height="70" class="box monitor"/>
+  <text x="963" y="420" class="label">Loki</text>
+  <text x="963" y="442" class="small">lưu trữ / truy vấn log</text>
+
+  <path d="M256 178 H321" class="arrow"/>
+  <path d="M455 184 H470" class="arrow"/>
+  <path d="M541 220 V251" class="arrow"/>
+  <path d="M399 291 H407" class="arrow"/>
+  <path d="M605 177 H666 V185 H700" class="arrow"/>
+  <path d="M581 291 H660 V305 H700" class="arrow"/>
+  <path d="M844 185 H888" class="arrow"/>
+  <path d="M844 305 H888" class="arrow"/>
+  <path d="M963 347 V382" class="arrow"/>
+  <path d="M1032 425 H1070 V185 H1040" class="arrow"/>
+  <text x="921" y="530" class="small">Grafana dùng Prometheus và Loki làm datasource</text>
+  <text x="600" y="652" class="small">Cổng quản trị bind 127.0.0.1; PostgreSQL chỉ truy cập trong mạng backend.</text>
+</svg>
