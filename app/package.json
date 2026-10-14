@@ -1,0 +1,8 @@
+{
+  "name": "even-event-management",
+  "version": "1.0.0",
+  "description": "Hệ thống quản lý sự kiện/Even - project thực hành triển khai và quản trị hệ thống phần mềm",
+  "main": "server.js",
+  "scripts": {"start": "node server.js"},
+  "dependencies": {"express": "^4.21.2", "pg": "^8.13.1"}
+}
