@@ -233,9 +233,9 @@ Tạo sự kiện và đăng ký thử, chờ log được đẩy, sau đó tìm
 
 *Hình 9. Truy vấn LogQL đã chọn trong Grafana Explore.*
 
-![Grafana Explore với truy vấn lọc registration_created](report-images/14-grafana-explore-registration-log.png)
+![Grafana Explore với truy vấn lọc registration_created](report-images/14a-grafana-explore-log-results.png)
 
-*Hình 10. Truy vấn LogQL thứ hai trong Grafana Explore.*
+*Hình 10. Truy vấn LogQL lọc `registration_created` trong Grafana Explore.*
 
 ![Kết quả kiểm tra ba truy vấn LogQL qua Loki API](report-images/15-logql-results.png)
 
@@ -299,7 +299,7 @@ nginx:
 
 *Hình 13. Tổng hợp bốn kết quả API đã kiểm tra (HTTP 201, 400, 201 và 409); dữ liệu thử đã được dọn.*
 
-Các phép thử T01–T05 và T07–T12 được chạy/xác nhận trên môi trường phát triển. Các bản ghi thử nghiệm cho T07–T10 đã được dọn; số liệu DB sau dọn được trả về 3 sự kiện và 3 lượt đăng ký.
+Các phép thử T01–T12 được chạy/xác nhận trên môi trường phát triển. Các bản ghi thử nghiệm cho T07–T10 đã được dọn; số liệu DB sau dọn được trả về 3 sự kiện và 3 lượt đăng ký.
 
 ### 9.2 Đối chiếu từng yêu cầu đề bài
 
